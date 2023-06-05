@@ -24,8 +24,15 @@
 
 		<!--- RESPOSTA 1 ---->
 		<script>
-			console.log('resposta 1');
-			//insira a resposta aqui.
+			const arr = [];
+
+			for (let index = 0; index < 100; index++) {
+				if (index % 7 === 0) {
+					arr.push(index);
+				}
+			}
+
+			console.log('Resposta 1', arr);
 		</script>
 
 		<div class="border"></div>
@@ -33,8 +40,17 @@
 		<p>2)Crie uma função que receba dois parâmetros, o primeiro chamado 'texto' (string) e o segundo chamado 'vezes' (número), com o objetivo retornar uma nova string com o texto repetido quantas vezes foi passado no parâmetro 'vezes', separado por vírgula. Exibir esta nova string no console.</p>
 		<!--- RESPOSTA 2 ---->
 		<script>
-			console.log('resposta 2');
-			//insira a resposta aqui.
+			function repeatString(texto, vezes) {
+				let repeatedString = '';
+
+				for (let index = 0; index < vezes; index++) {
+					repeatedString += `${index + 1} - ${texto}, `;
+				}
+
+				return repeatedString;
+			}
+
+			console.log('Resposta 2', repeatString('teste', 3));
 		</script>
 
 		<div class="border"></div>
@@ -48,8 +64,10 @@
 
 		<!--- RESPOSTA 3 ---->
 		<script>
-			console.log('resposta 3');
-			//insira a resposta aqui.
+			const fatherElement = document.querySelector('.pai');
+			const childElement = document.querySelector('.filho');
+
+			fatherElement.appendChild(childElement);
 		</script>
 		<div class="border"></div>
 		<!--- PERGUNTA 4 ---->
@@ -66,9 +84,12 @@
 			<p>texto</p>
 			<p>texto</p>
 		</div>
-		<script>
-			console.log('resposta 4');
-			//insira a resposta aqui.
+		<script>			
+			const paragraphs = $('div[style*="display: none"]').children();
+
+			paragraphs[1].innerText = 'Texto alterado';
+
+			paragraphs[2].classList.add('last');
 		</script>
 		<div class="border"></div>
 		<!--- PERGUNTA 5 ---->
@@ -76,8 +97,13 @@
 
 		<!--- RESPOSTA 5 ---->
 		<script>
-			console.log('resposta 5');
-			//insira a resposta aqui.
+			function legalAge(idade) {
+				let string = idade > 18 ? 'Maior de idade' : 'Menor de idade';
+
+				console.log('Resposta 5', string);
+			}
+
+			legalAge(18);
 		</script>
 		<div class="border"></div>
 		<!--- PERGUNTA 6 ---->
@@ -91,12 +117,19 @@
 		</ol>
 		<!--- RESPOSTA 6 ---->
 		<script>
-			console.log('resposta 6');
 			var obj = {
 				nomeObj: 'Mouse',
 				pesoObj: '150g'
 			}
-			//insira a resposta aqui.
+
+			obj.nomeObj = 'teclado'
+			obj.pesoObj = '500g'
+
+			const objArr = [];
+
+			objArr.push(obj);
+
+			console.log('Resposta 6', objArr);
 		</script>
 		<div class="border"></div>
 		<!--- PERGUNTA 7 ---->
@@ -109,8 +142,24 @@
 		</ol>
 		<!--- RESPOSTA 7 ---->
 		<script>
-			console.log('resposta 7');
-			//insira a resposta aqui.
+			console.log('Resposta 7');
+
+			const str = 'Eu quero trabalhar na Seri.e Design';
+
+			const strToArr = str.split(' ');
+			
+			const lastWord = strToArr.at(-1);
+
+			const reversedArr = strToArr.reverse();
+
+			const reformedStr = reversedArr.join('!');
+
+			const strLength = str.length;
+
+			console.log('1 -', reformedStr);
+			console.log('2 -', lastWord);
+			console.log('3 -', strLength);
+			console.log('4 -', typeof lastWord);
 		</script>
 		<div class="border"></div>
 		<!--- PERGUNTA 8 ---->
@@ -126,9 +175,17 @@
 		<div></div>
 		<div></div>
 		<div></div>
-		<script>
-			console.log('resposta 8');
-			//insira a resposta aqui.
+		<script>			
+			function addDataId(elements) {
+				const arr = [...elements]
+
+				arr.forEach((element, index) => {
+					element.setAttribute('data-id', `${index}`);
+				});
+
+				return;
+			}
+
 		</script>
 		<div class="border"></div>
 		<!--- PERGUNTA 9 ---->
@@ -152,15 +209,24 @@
 			</ul>
 		</div>
 		<script>
-			console.log('resposta 9');
-			//insira a resposta aqui.
+			const getList = document.querySelector('.content ul');
+
+			const button = getList.firstElementChild;
+
+			button.addEventListener('click', () => {
+				const element = document.querySelector('.subcontainer ul');
+
+				element.style.display = 'block';
+
+				document.querySelector('.content').classList.add('active');
+				document.querySelector('.subcontainer').classList.add('active');
+			})
 		</script>
 		<div class="border"></div>
 		<!--- PERGUNTA 10 ---->
 		<p>10) Dado o seguinte bloco de código:</p>
 		<pre>function observer() {<br>&nbsp;&nbsp;var target = '';<br>&nbsp;&nbsp;var restSecs = 0;<br>&nbsp;&nbsp;var intervalObserver = setInterval(function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;target = document.querySelector('footer .content');<br>&nbsp;&nbsp;&nbsp;&nbsp;if ($(target).length >= 1 && restSecs &lt;= 5) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//do something<br>&nbsp;&nbsp;&nbsp;&nbsp;} else if( restSecs==5 ){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clearInterval(intervalObserver); <br>&nbsp;&nbsp;&nbsp;&nbsp;} else { <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;restSecs++; }<br>&nbsp;&nbsp; }, 1000); <br>} observer();</pre>
 		<script>
-			console.log('resposta 10');
 			function observer() {
 				var target = '';
 				var restSecs = 0;
@@ -187,7 +253,7 @@
 		</ol>
 		<!--- RESPOSTA 10 ---->
 		<div>
-			<p style="color: #F00;">RESPOSTA: </p>
+			<p style="color: #F00;">RESPOSTA: 3</p>
 		</div>
 	</div>
 </body>
